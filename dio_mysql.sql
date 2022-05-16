@@ -5,7 +5,7 @@ CREATE TABLE pessoas (
 
 )
 
-########## INSERT #############
+#############################################################################  INSERT ############################################################################# 
 INSERT INTO pessoas (nome, nascimento) VALUES ('Franklin Moura', '1951-03-09');
 INSERT INTO pessoas (nome, nascimento) VALUES ('Franciso Lunar', '1991-01-11');
 INSERT INTO pessoas (nome, nascimento) VALUES ('Lucas Freitas', '1945-02-15');
@@ -18,7 +18,7 @@ INSERT INTO pessoas (nome, nascimento) VALUES ('Luiz Fernando', '1951-12-18');
 INSERT INTO pessoas (nome, nascimento) VALUES ('Carmen Lucia', '1976-11-23');
 INSERT INTO pessoas (nome, nascimento) VALUES ('Gabriel Dica', '1984-06-25');
 INSERT INTO pessoas (nome, nascimento) VALUES ('Loureiro Pia', '1969-07-23');
-########## INSERT COM AUTO INCREMENT ###################
+############################################################################# INSERT COM AUTO INCREMENT ############################################################################# 
 INSERT INTO pessoa (nome, nascimento, genero, cidade, pais, estado) VALUES('Paulo Fernando', '1980-08-20', 'M', 'Ribeirao Preto', 'BR', 'SP');
 
 
@@ -37,7 +37,7 @@ SELECT * FROM pessoa ORDER BY nome; | Ordena de forma crescente
 SELECT * FROM pessoa ORDER BY nome DESC; | Ordena de forma decrescenter
 
 
-####################### ALTER TABLE | Adicionando colunas #############
+############################################################################# ALTER TABLE | Adicionando colunas############################################################################# 
 ALTER TABLE pessoa ADD genero VARCHAR(1) NOT NULL AFTER nascimento;
 ALTER TABLE pessoa ADD cidade VARCHAR(39) NOT NULL AFTER genero;
 ALTER TABLE pessoa ADD estado VARCHAR(3) NOT NULL AFTER cidade;
@@ -47,7 +47,7 @@ ALTER TABLE pessoa ADD contato VARCHAR(15) NOT NULL;
 
 
 
-####################### UPDATE ##################
+############################################################################# UPDATE #################################################################################
 UPDATE pessoa SET genero='F', cidade='Canoas' WHERE id=11;
 UPDATE pessoa SET nome='Franciele Freitas' WHERE id=11;
 UPDATE pessoa SET genero='F', cidade='Canoas' WHERE id=14;
@@ -62,19 +62,19 @@ UPDATE pessoa SET genero='M', cidade='Cuíba', pais='BR', estado='MT' WHERE id=1
 UPDATE pessoa SET genero='F', cidade='Gramado', pais='BR', estado='RS' WHERE id=11;
 
 
-###################### GROUP BY #########################
+############################################################################# GROUP BY ############################################################################# 
 SELECT COUNT(id), genero FROM pessoa GROUP BY genero;
 SELECT COUNT(genero), genero FROM pessoa GROUP BY genero; | Tras o mesmo valor que count by id
 
 
-##################### DELETANDO UMA TABELA ####################
+#############################################################################  DELETANDO UMA TABELA ############################################################################# 
 DROP TABLE nometable;
 
-##################### Deletando base de dados #################
+#############################################################################  Deletando base de dados ############################################################################# 
 DROP DATABASE nomedatabase;
 
 
-################### Table tbl_videos ##############
+############################################################################# Table tbl_videos ############################################################################# 
 
 
 ALTER TABLE tbl_videos ADD genres VARCHAR(15) NOT NULL;
@@ -91,7 +91,7 @@ CREATE TABLE tbl_videos (
     data_pub DATE
 
 )
-
+############################################################################# ISERT ############################################################################# 
 INSERT INTO tbl_videos ( title,likes, dislikes, genres, times_watched, data_pub) VALUES ('MySQL', '1190', '230', 'Educational', '1500', '2021-02-13,);	
 INSERT INTO tbl_videos ( title,likes, dislikes, genres, times_watched, data_pub) VALUES ('Python', '1190', '150', 'Educational', '1500', '2019-05-16');
 INSERT INTO tbl_videos ( title,likes, dislikes, genres, times_watched, data_pub) VALUES ('Java', '45000', '100', 'Educational', '50000', '2019-09-29');	
@@ -109,7 +109,7 @@ INSERT INTO tbl_videos ( title,likes, dislikes, genres, times_watched, data_pub)
 INSERT INTO tbl_videos ( title,likes, dislikes, genres, times_watched, data_pub) VALUES ('A Pequena Sereia', '190', '5', 'Musical', '300, '2021-8-13');	
 INSERT INTO tbl_videos ( title,likes, dislikes, genres, times_watched, data_pub) VALUES ('Life on the line', '5690', '39', 'Action', '60001', '2021-03-31');
 
-###################
+############################################################################# Create table ############################################################################# 
 
 CREATE TABLE tbl_author (
     id_author INT NOT NULL PRIMaRY KEY AUTOINCREMENT, 
@@ -118,6 +118,7 @@ CREATE TABLE tbl_author (
 
    
 );
+############################################################################# INSERT ############################################################################# 
 INSERT INTO tbl_author (author_first_name, author_last_name) VALUES ('Lucas', 'Matrix');
 INSERT INTO tbl_author (author_first_name, author_last_name) VALUES ('Fabio', 'Franca');
 INSERT INTO tbl_author (author_first_name, author_last_name) VALUES ('Franklin', 'Patrick');
@@ -167,9 +168,9 @@ Primeira coluna obrigatoriedade, segunda coluna corresponder a cardinalidade
 2 - logica - Colocado em um programa
 3 - Script no banco
 
-
+############################################################################# DESC nometabela ############################################################################# 
 DESC tabela | descreve e mostra os campos da tabela
-
+############################################################################# Iniciando os trabalhos ############################################################################# 
 CREATE TABLE tbl_author(
     id_author INT PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(30) NOT NULL,
@@ -188,7 +189,7 @@ INSERT INTO tbl_author VALUES(NULL, 'Carlos Voss', 'carlos.voss@uol.com.br', 'M'
 CREATE TABLE tbl_contact (
     id_contact INT PRIMARY KEY AUTO_INCREMENT,
     phone_type ENUM('Landline', 'COM', 'CEL') NOT NULL,
-    number VARCHAR(12) NOT NULL,
+    number VARCHAR(16) NOT NULL,
     idfk_author INT,
     FOREIGN KEY(idfk_author)
     REFERENCES tbl_author(id_author)
@@ -220,6 +221,7 @@ CREATE TABLE tbl_videos (
     FOREIGN KEY(idfk_author)
     REFERENCES tbl_author(id_author)
 );
+
 INSERT INTO tbl_videos VALUES (NULL, 'Learning JAVA', '1583900', '130000', '6', '2021-01-11',1);
 INSERT INTO tbl_videos VALUES (NULL, 'Learning Python', '159000', '130000', '1520', '2019-09-28',2);
 INSERT INTO tbl_videos VALUES (NULL, 'Learning JavaScript', '5600000', '130000', '1220', '2019-10-23',3);
@@ -238,7 +240,7 @@ INSERT INTO tbl_videos VALUES (NULL, 'Comedy Film', '457910034', '11000', '1000'
 
 CREATE TABLE tbl_genres (
     id_genres INT PRIMARY KEY AUTO_INCREMENT,
-    genres ENUM('Action', 'Comedy', 'Science Fiction', 'Romance', 'Musical', 'Thriller', 'Horror')
+    genres ENUM('Action', 'Comedy', 'Science Fiction', 'Romance', 'Musical', 'Thriller', 'Horror'),
     idfk_videos INT,
     FOREIGN KEY(idfk_videos)
     REFERENCES tbl_videos(id_videos)  
@@ -266,13 +268,13 @@ INSERT INTO tbl_genres VALUES (NULL,'Self Help',14);
 INSERT INTO tbl_genres VALUES (NULL,'Educacional',15);
 INSERT INTO tbl_genres VALUES (NULL,'Educational',16);
 
-
+############################################################################# Fazendo filtros e pesquisa nas tabelas ############################################################################# 
 
 
 
 Chave estrangeira é a chave primaria de uma tabela que vai até outra tabela para fazer referencia entre registros
 
-########### Regra para configuracao da regra ####################
+############################################################################# Regra para configuracao da regra ############################################################################# 
 Em relacionamento 1 x 1 a chave estrangeira fica na tabela mais fraca
 
 Em relacionamento 1 x n a chave estrangeira fica para sempre na tabela com cardinalidade N x /
