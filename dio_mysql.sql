@@ -240,7 +240,7 @@ INSERT INTO tbl_videos VALUES (NULL, 'Comedy Film', '457910034', '11000', '1000'
 
 CREATE TABLE tbl_genres (
     id_genres INT PRIMARY KEY AUTO_INCREMENT,
-    genres ENUM('Action', 'Comedy', 'Science Fiction', 'Romance', 'Musical', 'Thriller', 'Horror'),
+    genres ENUM('Action', 'Comedy', 'Science Fiction', 'Romance', 'Musical', 'Thriller', 'Horror', 'Self Help','Educational'),
     idfk_videos INT,
     FOREIGN KEY(idfk_videos)
     REFERENCES tbl_videos(id_videos)  
