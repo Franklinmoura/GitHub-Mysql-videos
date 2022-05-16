@@ -249,24 +249,18 @@ CREATE TABLE tbl_genres (
 INSERT INTO tbl_genres VALUES (NULL,'Educational',1);
 INSERT INTO tbl_genres VALUES (NULL,'Educational',2);
 INSERT INTO tbl_genres VALUES (NULL,'Educational',3);
-INSERT INTO tbl_genres VALUES (NULL,'Educational',4);
-INSERT INTO tbl_genres VALUES (NULL,'Self Help',5);
-INSERT INTO tbl_genres VALUES (NULL,'Educational',17);
-INSERT INTO tbl_genres VALUES (NULL,'Educational',18);
-INSERT INTO tbl_genres VALUES (NULL,'Horror',22);
-INSERT INTO tbl_genres VALUES (NULL,'Musical',23);
-INSERT INTO tbl_genres VALUES (NULL,'Comedy',24);
-
+INSERT INTO tbl_genres VALUES (NULL,'Self Help',4);
+INSERT INTO tbl_genres VALUES (NULL,'Educational',5);
 INSERT INTO tbl_genres VALUES (NULL,'Educational',6);
 INSERT INTO tbl_genres VALUES (NULL,'Educational',7);
 INSERT INTO tbl_genres VALUES (NULL,'Educational',8);
-INSERT INTO tbl_genres VALUES (NULL,'Self Help',9);
-INSERT INTO tbl_genres VALUES (NULL,'Educational',11);
-INSERT INTO tbl_genres VALUES (NULL,'Self Help',12);
-INSERT INTO tbl_genres VALUES (NULL,'Educational',13);
-INSERT INTO tbl_genres VALUES (NULL,'Self Help',14);
-INSERT INTO tbl_genres VALUES (NULL,'Educacional',15);
-INSERT INTO tbl_genres VALUES (NULL,'Educational',16);
+INSERT INTO tbl_genres VALUES (NULL,'Educational',9);
+INSERT INTO tbl_genres VALUES (NULL,'Educational',10);
+INSERT INTO tbl_genres VALUES (NULL,'Horror',12);
+INSERT INTO tbl_genres VALUES (NULL,'Musical',13);
+INSERT INTO tbl_genres VALUES (NULL,'Comedy',14);
+INSERT INTO tbl_genres VALUES (NULL,'Comedy',15);
+
 
 ############################################################################# Fazendo filtros e pesquisa nas tabelas ############################################################################# 
 
